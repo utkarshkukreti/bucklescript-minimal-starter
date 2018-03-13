@@ -1,18 +1,30 @@
 # BuckleScript Minimal Starter
 
-## Install Dependencies
+## Setup
+
+Install Dependencies:
 
 ```
 yarn install
 ```
 
-## Start Development Server
+## Development
+
+Start BuckleScript Compiler in Watch Mode and webpack-serve:
 
 ```
 yarn start
 ```
 
-## Build for Production
+Start Jest in Watch Mode:
+
+```
+yarn start.jest
+```
+
+## Production
+
+Build for Production:
 
 ```
 yarn build

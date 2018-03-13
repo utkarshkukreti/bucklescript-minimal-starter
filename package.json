@@ -5,11 +5,10 @@
     "start": "run-p start.bsb start.webpack",
     "start.bsb": "bsb -make-world -w",
     "start.webpack": "webpack-serve",
-    "build": "run-s build.bsb build.webpack",
-    "build.bsb": "bsb -clean-world && bsb -make-world",
-    "build.webpack": "webpack -p",
-    "test":
-      "perl -p -i -e 's/es6/commonjs/' bsconfig.json && bsb -clean-world && bsb -make-world && perl -p -i -e 's/commonjs/es6/' bsconfig.json && jest"
+    "start.jest": "jest --watch",
+    "build":
+      "perl -p -i -e 's/commonjs/es6/' bsconfig.json && bsb -clean-world && bsb -make-world && perl -p -i -e 's/es6/commonjs/' bsconfig.json && webpack -p",
+    "test": "bsb -clean-world && bsb -make-world && jest"
   },
   "keywords": ["BuckleScript"],
   "author": "",

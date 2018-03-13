@@ -1,4 +1,5 @@
 *.bs.js
+.bsb.lock
 .merlin
 /dist
 /lib/bs
