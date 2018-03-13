@@ -7,16 +7,22 @@
     "start.webpack": "webpack-serve",
     "build": "run-s build.bsb build.webpack",
     "build.bsb": "bsb -clean-world && bsb -make-world",
-    "build.webpack": "webpack -p"
+    "build.webpack": "webpack -p",
+    "test":
+      "perl -p -i -e 's/es6/commonjs/' bsconfig.json && bsb -clean-world && bsb -make-world && perl -p -i -e 's/commonjs/es6/' bsconfig.json && jest"
   },
   "keywords": ["BuckleScript"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.2",
     "bs-platform": "^2.2.2",
     "npm-run-all": "^4.1.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-serve": "^0.2.0"
+  },
+  "jest": {
+    "testRegex": "Test\\.bs\\.js"
   }
 }
